@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,74 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="接口地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvX-ul-X5P">
+                                <rect key="frame" x="15" y="80" width="72" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="VAO-Ms-6FZ"/>
+                                    <constraint firstAttribute="height" constant="21" id="eef-Go-cBU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="返回数据：" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ln7-op-DuH">
+                                <rect key="frame" x="15" y="135" width="345" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="Htj-bf-1sc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3R3-wT-nd0">
+                                <rect key="frame" x="310" y="75" width="50" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2gh-Le-PgN"/>
+                                </constraints>
+                                <state key="normal" title="请求"/>
+                                <connections>
+                                    <action selector="requestData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ush-Ot-5Dp"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="接口地址" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vgT-mV-Nap">
+                                <rect key="frame" x="92" y="75" width="213" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tL0-Rn-DdZ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SvX-ul-X5P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="EaB-Ne-P7I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3R3-wT-nd0" secondAttribute="trailing" constant="15" id="Ek9-kS-RZJ"/>
+                            <constraint firstItem="vgT-mV-Nap" firstAttribute="leading" secondItem="SvX-ul-X5P" secondAttribute="trailing" constant="5" id="F0m-5i-QOa"/>
+                            <constraint firstItem="ln7-op-DuH" firstAttribute="top" secondItem="vgT-mV-Nap" secondAttribute="bottom" constant="30" id="Ghj-0W-xRg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ln7-op-DuH" secondAttribute="trailing" constant="15" id="LsQ-ov-2sI"/>
+                            <constraint firstItem="SvX-ul-X5P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="MuL-u0-lYp"/>
+                            <constraint firstItem="3R3-wT-nd0" firstAttribute="centerY" secondItem="vgT-mV-Nap" secondAttribute="centerY" id="RJb-lj-Jmp"/>
+                            <constraint firstItem="3R3-wT-nd0" firstAttribute="leading" secondItem="vgT-mV-Nap" secondAttribute="trailing" constant="5" id="Su3-jO-MUq"/>
+                            <constraint firstItem="vgT-mV-Nap" firstAttribute="centerY" secondItem="SvX-ul-X5P" secondAttribute="centerY" id="etm-iB-8CP"/>
+                            <constraint firstItem="ln7-op-DuH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="o6W-94-L0N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vgT-mV-Nap" secondAttribute="trailing" constant="70" id="tP1-r6-h5M"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="vgT-mV-Nap" id="EXT-tC-dcW"/>
+                        <outlet property="textView" destination="ln7-op-DuH" id="WKj-BS-3LV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="282" y="64"/>
         </scene>
     </scenes>
 </document>
